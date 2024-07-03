@@ -15,14 +15,14 @@ const App = () => {
 
   return (
     <Router>
-      <div className="container mx-auto p-4">
+      <div className=" mx-auto p-4">
         <Routes>
           <Route path="/" element={
             <>
               <UserForm />
               <UserTable />
-              <Link to="/profiles">
-                <button className="bg-blue-500 text-white p-2 rounded mt-4">Go to Profiles</button>
+              <Link className='flex justify-end'  to="/profiles">
+                <button className="bg-[#483EFF] text-white p-2 px-12 rounded mt-4">Go to Profiles</button>
               </Link>
             </>
           } />

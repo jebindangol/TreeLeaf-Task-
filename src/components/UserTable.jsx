@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteUser, updateUser } from '../redux/feature/usersSlice';
+import { FaDeleteLeft } from "react-icons/fa6";
 
 const UserTable = () => {
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const UserTable = () => {
   return (
     <>
     <hr className="border border-gray-300 w-full mb-14" />
-      <table className="min-w-full bg-white">
+      <table className="min-w-full bg-gray-300 shadow-md border border-gray-400  rounded-xl">
         <thead>
           <tr>
             <th className="py-2">Name</th>
@@ -64,14 +65,14 @@ const UserTable = () => {
               <td className="border px-4 py-2">{editingIndex === index ? <input type="text" name="city" value={editingUser.city} onChange={handleChange} className="border p-2 rounded w-full" /> : user.city}</td>
               <td className="border px-4 py-2">{editingIndex === index ? <input type="text" name="district" value={editingUser.district} onChange={handleChange} className="border p-2 rounded w-full" /> : user.district}</td>
               <td className="border px-4 py-2">{editingIndex === index ? <select name="province" value={editingUser.province} onChange={handleChange} className="border p-2 rounded w-full">
-                <option value="">Select Province</option>
-                <option value="1">Province 1</option>
-                <option value="2">Province 2</option>
-                <option value="3">Province 3</option>
-                <option value="4">Province 4</option>
-                <option value="5">Province 5</option>
-                <option value="6">Province 6</option>
-                <option value="7">Province 7</option>
+              <option value="">Select Province</option>
+              <option value="Koshi">Koshi Province</option>
+              <option value="Madesh"> Madesh Province </option>
+              <option value="Bagmati">Bagmati Province </option>
+              <option value="Gandaki"> Gandaki Province </option>
+              <option value="Lumbini"> Lumbini Province </option>
+              <option value="Karnali"> Karnali Province </option>
+              <option value="Sudurpaschim"> Sudurpaschim Province </option>
               </select> : user.province}</td>
               <td className="border px-4 py-2">{editingIndex === index ? <select name="country" value={editingUser.country} onChange={handleChange} className="border p-2 rounded w-full">
                 {countries.map((country) => (
@@ -79,16 +80,41 @@ const UserTable = () => {
                 ))}
               </select> : user.country}</td>
               <td className="border px-4 py-2">
-                {editingIndex === index ? <button onClick={handleUpdate} className="bg-green-500 text-white p-1 mt-10 ml-3 rounded">Save</button> : <button onClick={() => handleEdit(index)} className="bg-yellow-500 text-white p-2 rounded">Edit</button>}
-                <button onClick={() => handleDelete(index)} className="bg-red-500 text-white ml-2 p-2 rounded">Delete</button>
-              </td>
+              <td className="border px-4 py-2">
+  <div className="flex gap-2 space-x-2 items-center">
+    {editingIndex === index ? (
+      <button
+        onClick={handleUpdate}
+        className="bg-[#6259ff] text-white p-2 rounded"
+      >
+        Save
+      </button>
+    ) : (
+      <button
+        onClick={() => handleEdit(index)}
+        className="bg-white text-black border  p-2  rounded"
+      >
+        Edit
+      </button>
+    )}
+    <button
+      onClick={() => handleDelete(index)}
+      className=" text-3xl "
+    >
+      <FaDeleteLeft /> 
+    </button>
+  </div>
+</td>
+
+</td>
+
             </tr>
           ))}
         </tbody>
       </table>
-      <div className="mt-4">
+      <div className="mt-4 flex justify-center">
         {Array.from({ length: Math.ceil(users.length / usersPerPage) }, (_, index) => (
-          <button key={index} onClick={() => paginate(index + 1)} className="bg-blue-500 text-white p-2 rounded mx-1">
+          <button key={index} onClick={() => paginate(index + 1)} className="border border-gray-400  p-1  px-3 rounded-full mx-1">
             {index + 1}
           </button>
         ))}

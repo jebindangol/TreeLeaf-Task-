@@ -147,13 +147,13 @@ const UserForm = () => {
               className="border border-gray-300 p-2 rounded w-full"
             >
               <option value="">Select Province</option>
-              <option value="1">Province 1</option>
-              <option value="2">Province 2</option>
-              <option value="3">Province 3</option>
-              <option value="4">Province 4</option>
-              <option value="5">Province 5</option>
-              <option value="6">Province 6</option>
-              <option value="7">Province 7</option>
+              <option value="Koshi">Koshi Province</option>
+              <option value="Madesh"> Madesh Province </option>
+              <option value="Bagmati">Bagmati Province </option>
+              <option value="Gandaki"> Gandaki Province </option>
+              <option value="Lumbini"> Lumbini Province </option>
+              <option value="Karnali"> Karnali Province </option>
+              <option value="Sudurpaschim"> Sudurpaschim Province </option>
             </select>
           </div>
           <div>

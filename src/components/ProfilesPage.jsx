@@ -1,11 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { RiCornerUpLeftLine } from "react-icons/ri";
 
 const ProfilesPage = () => {
   const users = useSelector((state) => state.users);
 
   return (
     <div className="p-4">
+       <Link to="/">
+      <button className="flex items-center gap-2 bg-gray-500 border border-black text-black p-2 px-6 rounded-xl mt-4">
+        <RiCornerUpLeftLine /> Back
+      </button>
+    </Link>
+
       <h1 className="text-2xl font-bold mb-4">Profiles</h1>
       <table className="min-w-full bg-white">
         <thead>
@@ -35,6 +43,7 @@ const ProfilesPage = () => {
           ))}
         </tbody>
       </table>
+
     </div>
   );
 };

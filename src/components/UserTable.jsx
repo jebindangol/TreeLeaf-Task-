@@ -39,6 +39,7 @@ const UserTable = () => {
 
   return (
     <>
+    <hr className="border border-gray-300 w-full mb-14" />
       <table className="min-w-full bg-white">
         <thead>
           <tr>

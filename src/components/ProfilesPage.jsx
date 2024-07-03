@@ -9,7 +9,7 @@ const ProfilesPage = () => {
   return (
     <div className="p-4">
        <Link to="/">
-      <button className="flex items-center gap-2 bg-gray-500 border border-black text-black p-2 px-6 rounded-xl mt-4">
+      <button className="flex items-center gap-2 bg-[#6259ff] border border-blue-300 text-black p-2 px-6 rounded-xl mt-4">
         <RiCornerUpLeftLine /> Back
       </button>
     </Link>
